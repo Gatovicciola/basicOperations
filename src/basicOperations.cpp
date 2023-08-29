@@ -1,5 +1,7 @@
 #include "basicOperations.hpp"
 #include <cmath>
+#include <iostream>
+#include <stdexcept>
 
 double add(double a, double b) {
     return a + b;
@@ -25,7 +27,7 @@ double divide(double a, double b) {
 
 double rootSquare(double a) {
     if (a < 0) {
-        throw std::runtime_error("Cannot calculate square root of a negative number.");
+	    std::cerr << "Error: Cannot calcule square root of a negative number." << std::endl;
     }
     return std::sqrt(a);
 }
