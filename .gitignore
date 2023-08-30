@@ -1,3 +1,4 @@
 pybind11/pybind11/
 build/
 basicOperations.egg-info/
+*__pycache__/

@@ -19,15 +19,15 @@ double divide(double a, double b) {
     if (b != 0) {
         return a / b;
     } else {
-        // You might want to handle the division by zero case here
-        // For now, let's just return 0. You can customize this.
+	    std::cerr << "Error: division by zero." << std::endl;
         return 0;
     }
 }
 
 double rootSquare(double a) {
     if (a < 0) {
-	    std::cerr << "Error: Cannot calcule square root of a negative number." << std::endl;
+	    std::cerr << "Error: square root of a negative number." << std::endl;
+        return 0;
     }
     return std::sqrt(a);
 }

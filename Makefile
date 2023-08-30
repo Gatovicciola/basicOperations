@@ -6,4 +6,4 @@ p:
 c:
 	rm -rf build
 t:
-	python3.11 tests/*
+	python3.11 -m pytest
