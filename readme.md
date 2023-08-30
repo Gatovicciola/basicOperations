@@ -2,17 +2,17 @@
 make sure to have cmake and python.
 
 then you can 
-'''bash
+```bash
 cd ..
 python -m pip install ./basicOperations
-'''
+```
 
 if it fails
-'''bash
+```bash
 cd basicOperations
 make 
 make t
-'''
+```
 # References
 
 - [pybind11](https://github.com/pybind/pybind11)
