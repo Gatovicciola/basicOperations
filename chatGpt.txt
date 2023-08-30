@@ -1,7 +1,0 @@
-4. **Compile the code**:
-
-You'll need to compile the code using a C++ compiler along with pybind11. Here's an example command using `g++`:
-
-```bash
-g++ -O3 -Wall -shared -std=c++11 -fPIC `python3 -m pybind11 --includes` basicOperations.cpp main.cpp -o basicOperations`python3-config --extension-suffix`
-```
