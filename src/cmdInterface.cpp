@@ -5,6 +5,7 @@
 int main(int argc, char* argv[]) {
     double a = 0.0;
     double b = 0.0;
+    bool showHelp= false;
     bool add_= false;
     bool subt= false;
     bool mult= false;
@@ -13,13 +14,14 @@ int main(int argc, char* argv[]) {
 
     // Define command-line options using Lyra
     auto cli = lyra::cli()
-        | lyra::opt(a, "a")["-a"]("first variable")
-        | lyra::opt(b, "b")["-b"]("second variable")
+        | lyra::help(showHelp)
         | lyra::opt(add_)["--add"]("Adds two numbers")
         | lyra::opt(subt)["--subt"]("Subtracts two numbers")
         | lyra::opt(mult)["--mult"]("Multiplies two numbers")
         | lyra::opt(divd)["--divd"]("Divides two numbers")
-        | lyra::opt(sqrt)["--sqrt"]("Calculates the square root of a number");
+        | lyra::opt(sqrt)["--sqrt"]("Calculates the square root of a number")
+        | lyra::opt(a, "a")["-a"]("first variable")
+        | lyra::opt(b, "b")["-b"]("second variable");
 
     // Parse the command-line arguments
     auto result = cli.parse({argc, argv});
@@ -31,7 +33,10 @@ int main(int argc, char* argv[]) {
 
     // Perform the selected operation
     double resultValue;
-    if (add_) {
+    if (showHelp) {
+        std::cout << cli << std::endl;
+        return 0;
+    } else if (add_) {
         resultValue = add(a, b);
     } else if (subt) {
         resultValue = subtract(a, b);
@@ -43,6 +48,7 @@ int main(int argc, char* argv[]) {
         resultValue = rootSquare(a);
     } else {
         std::cerr << "[Error]: command not found " <<  std::endl;
+        return 1;
     }
 
     std::cout << "Result: " << resultValue << std::endl;

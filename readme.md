@@ -17,6 +17,7 @@ make t
 
 ```bash
 pwd /home/nocasteleyn/programming/basicOperations
+build/basicOperationsExe --help
 build/basicOperationsExe --subt -a 1 -b 2
 ```
 # References
