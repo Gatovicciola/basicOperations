@@ -13,9 +13,16 @@ cd basicOperations
 make 
 make t
 ```
+# lyra commands
+
+```bash
+pwd /home/nocasteleyn/programming/basicOperations
+build/basicOperationsExe --subt -a 1 -b 2
+```
 # References
 
 - [pybind11](https://github.com/pybind/pybind11)
 - [cmake](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html)
 - [vim](https://doc.ubuntu-fr.org/vim)
 - [openai](https://chat.openai.com/)
+- [lyra](https://github.com/bfgroup/Lyra)
