@@ -20,6 +20,12 @@ pwd /home/nocasteleyn/programming/basicOperations
 build/basicOperationsExe --help
 build/basicOperationsExe --subt -a 1 -b 2
 ```
+
+or
+
+```bash
+python tests/send_operation.py
+```
 # References
 
 - [pybind11](https://github.com/pybind/pybind11)

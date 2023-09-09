@@ -7,3 +7,6 @@ c:
 	rm -rf build
 t:
 	python3.11 -m pytest
+
+shellspec, s:
+	python3.11 tests/send_operation.py
