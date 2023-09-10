@@ -3,12 +3,6 @@
 #include "basicOperations.hpp" // Include your basic operations header
 
 int main(int argc, char* argv[]) {
-
-    // Print debugging <information
-    for (int i = 0; i < argc; ++i) {
-    std::cout << "Argument " << i << ": " << argv[i] << std::endl;
-    }
-
     double a = 0.0;
     double b = 0.0;
     bool showHelp= false;

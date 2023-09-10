@@ -22,14 +22,6 @@ int bridge(pybind11::str cmds) {
         args.push_back(arg);
     }
 
-    // Print debugging <information
-    std::cout << "[Tokenization]: args: ";
-    for (const std::string& arg : args) {
-        std::cout << arg << " ";
-    }
-    std::cout << std::endl;
-    std::cout << "[Tokenization]: iss: " << iss.str() << std::endl;
-
     // Create argc and argv
     int argc = static_cast<int>(args.size());
     char** argv = new char*[argc];
@@ -37,14 +29,6 @@ int bridge(pybind11::str cmds) {
         argv[i] = new char[args[i].size() + 1];
         std::strcpy(argv[i], args[i].c_str());
     }
-
-    // Print debugging <information
-    std::cout << "[main]: argc: " << argc << std::endl;
-        std::cout << "[main]: argv: ";
-    for (int i = 0; i < argc; ++i) {
-        std::cout << argv[i] << " ";
-    }
-    std::cout << std::endl;
 
     // Call your_function with argc and argv
     int result = main(argc, argv);  // Replace 'your_function' with the actual function you want to call.

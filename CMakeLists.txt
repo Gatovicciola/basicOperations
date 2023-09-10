@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.4...3.18)
 project(basicOperations)
+#/usr/bin/python3.11
 
 # Cpp Application
-#/usr/bin/python3.11
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src /home/nocasteleyn/programming/installs/Lyra-1.6.1/include)
 add_library(basicOperationsShared SHARED src/basicOperations.hpp src/basicOperations.cpp src/cmdInterface.cpp)
 target_link_libraries(basicOperationsShared)
 
-# Create an executable
+# Create an executable <as you wish>
 add_executable(basicOperationsExe src/cmdInterface.cpp)   
 target_link_libraries(basicOperationsExe PRIVATE basicOperationsShared)
 
