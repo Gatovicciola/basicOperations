@@ -2,7 +2,7 @@
 #include <lyra/lyra.hpp>
 #include "basicOperations.hpp" // Include your basic operations header
 
-int main(int argc, char* argv[]) {
+double cmdI(int argc, char* argv[]) {
     double a = 0.0;
     double b = 0.0;
     bool showHelp= false;

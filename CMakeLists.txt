@@ -7,10 +7,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src /home/nocasteleyn/programmin
 add_library(basicOperationsShared SHARED src/basicOperations.hpp src/basicOperations.cpp src/cmdInterface.cpp)
 target_link_libraries(basicOperationsShared)
 
-# Create an executable <as you wish>
-add_executable(basicOperationsExe src/cmdInterface.cpp)   
-target_link_libraries(basicOperationsExe PRIVATE basicOperationsShared)
-
 # Python API
 add_subdirectory(pybind11)
 pybind11_add_module(basicOperations SHARED src/binder.cpp)

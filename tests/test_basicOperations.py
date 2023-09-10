@@ -21,7 +21,7 @@ def test_send_command_subtract():
 def test_send_command_multiply():
     assert basicOperations.send_command("--mult -a 5.0 -b 3.0") == 15.0
 def test_send_command_divide():
-    assert basicOperations.send_command("--divd -a 6.0 -b 3.0") == 2.0
+    assert basicOperations.send_command("--divd -a 6.6 -b 3.0") == 2.1999999999999997
 def test_send_command_rootSquare():
     assert basicOperations.send_command("--sqrt -a 25.0") == 5.0
 

@@ -7,7 +7,6 @@ auto bridge(pybind11::str cmds) {
 
     // Convert the Python string to a C++ std::string
     std::string cmd_string = cmds.cast<std::string>();
-    std::cout << "cmd_string: " << cmd_string << std::endl;
 
     // Tokenize the command string into separate arguments
     std::vector<std::string> args;
@@ -30,7 +29,7 @@ auto bridge(pybind11::str cmds) {
     }
 
     // Call your_function with argc and argv
-    int result = main(argc, argv);  // Replace 'your_function' with the actual function you want to call.
+    auto result = cmdI(argc, argv);  // Replace 'your_function' with the actual function you want to call.
 
     // Clean up argv
     for (int i = 0; i < argc; ++i) {

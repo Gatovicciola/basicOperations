@@ -29,24 +29,6 @@ cd basicOperations
 make 
 make t
 ```
-# lyra commands
-by default in the CMakeList.txt it compiles basicOperationsExe
-
-```bash
-pwd /home/nocasteleyn/programming/basicOperations
-build/basicOperationsExe --help
-build/basicOperationsExe --subt -a 1 -b 2
-```
-
-or
-
-```python
-import os
-basicOperationsExe_path = "build/basicOperationsExe"
-
-os.system(f"{basicOperationsExe_path}  --help")
-os.system(f"{basicOperationsExe_path}  --subt -a 1 -b 2")
-```
 # References
 
 - [pybind11](https://github.com/pybind/pybind11)
