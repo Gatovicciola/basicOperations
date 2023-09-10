@@ -1,6 +1,6 @@
-import os
-basicOperationsExe_path = "build/basicOperationsExe"
+import sys
+sys.path.append("build")
 
-os.system(f"{basicOperationsExe_path}  --help")
-os.system(f"{basicOperationsExe_path}  --subt -a 1 -b 2")
-# so we could use shellspec to test the "basicOperationsExe"
+import basicOperations as bo
+bo.send_command(["","--help"])
+bo.send_command(["","--subt", "-a 1", "-b 2"])
