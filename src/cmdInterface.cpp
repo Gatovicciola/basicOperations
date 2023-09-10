@@ -37,20 +37,19 @@ int main(int argc, char* argv[]) {
         std::cout << cli << std::endl;
         return 0;
     } else if (add_) {
-        resultValue = add(a, b);
+        return resultValue = add(a, b);
     } else if (subt) {
-        resultValue = subtract(a, b);
+        return resultValue = subtract(a, b);
     } else if (mult) {
-        resultValue = multiply(a, b);
+        return resultValue = multiply(a, b);
     } else if (divd) {
-        resultValue = divide(a, b);
+        return resultValue = divide(a, b);
     } else if (sqrt) {
-        resultValue = rootSquare(a);
+        return resultValue = rootSquare(a);
     } else {
         std::cerr << "[Error]: command not found " <<  std::endl;
         return 1;
     }
 
     std::cout << "[Result]: " << resultValue << std::endl;
-    return 0;
 }

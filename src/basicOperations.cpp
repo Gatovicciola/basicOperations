@@ -20,14 +20,14 @@ double divide(double a, double b) {
         return a / b;
     } else {
 	    std::cerr << "Error: division by zero." << std::endl;
-        return 0;
+        return 1;
     }
 }
 
 double rootSquare(double a) {
     if (a < 0) {
 	    std::cerr << "Error: square root of a negative number." << std::endl;
-        return 0;
+        return 1;
     }
     return std::sqrt(a);
 }

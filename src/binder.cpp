@@ -3,12 +3,11 @@
 #include "basicOperations.hpp"
 #include "cmdInterface.cpp"
 
-int bridge(pybind11::str cmds) {
-    std::cout << "[Input]: " << cmds << std::endl;
+auto bridge(pybind11::str cmds) {
 
     // Convert the Python string to a C++ std::string
     std::string cmd_string = cmds.cast<std::string>();
-    std::cout << "[first convert]: cmd_string: " << cmd_string << std::endl;
+    std::cout << "cmd_string: " << cmd_string << std::endl;
 
     // Tokenize the command string into separate arguments
     std::vector<std::string> args;
@@ -16,7 +15,7 @@ int bridge(pybind11::str cmds) {
     std::string arg;
     
     // Set the program name as "send_command"
-    args.push_back("send_command");
+    args.push_back("cmd_string:");
 
     while (iss >> arg) {
         args.push_back(arg);
