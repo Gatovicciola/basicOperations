@@ -1,16 +1,34 @@
 #include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
 #include "basicOperations.hpp"
 #include "cmdInterface.cpp"
 
-namespace py = pybind11;
+int bridge(pybind11::str cmds) {
+    std::cout << "[Input]: " << cmds << std::endl;
 
+    // Convert the Python string to a C++ std::string
+    std::string cmd_string = cmds.cast<std::string>();
+    std::cout << "[first convert]: cmd_string: " << cmd_string << std::endl;
 
-int bridge(pybind11::list cmds) {
-    // Convert the Python list to a C++ vector of strings
+    // Tokenize the command string into separate arguments
     std::vector<std::string> args;
-    for (auto item : cmds) {
-        args.push_back(pybind11::str(item));
+    std::istringstream iss(cmd_string);
+    std::string arg;
+    
+    // Set the program name as "send_command"
+    args.push_back("send_command");
+
+    while (iss >> arg) {
+        args.push_back(arg);
     }
+
+    // Print debugging <information
+    std::cout << "[Tokenization]: args: ";
+    for (const std::string& arg : args) {
+        std::cout << arg << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "[Tokenization]: iss: " << iss.str() << std::endl;
 
     // Create argc and argv
     int argc = static_cast<int>(args.size());
@@ -20,8 +38,16 @@ int bridge(pybind11::list cmds) {
         std::strcpy(argv[i], args[i].c_str());
     }
 
+    // Print debugging <information
+    std::cout << "[main]: argc: " << argc << std::endl;
+        std::cout << "[main]: argv: ";
+    for (int i = 0; i < argc; ++i) {
+        std::cout << argv[i] << " ";
+    }
+    std::cout << std::endl;
+
     // Call your_function with argc and argv
-    int result = main(argc, argv);
+    int result = main(argc, argv);  // Replace 'your_function' with the actual function you want to call.
 
     // Clean up argv
     for (int i = 0; i < argc; ++i) {

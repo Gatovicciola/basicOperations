@@ -3,14 +3,20 @@
 #include "basicOperations.hpp" // Include your basic operations header
 
 int main(int argc, char* argv[]) {
+
+    // Print debugging <information
+    for (int i = 0; i < argc; ++i) {
+    std::cout << "Argument " << i << ": " << argv[i] << std::endl;
+    }
+
     double a = 0.0;
     double b = 0.0;
     bool showHelp= false;
-    bool add_= false;
-    bool subt= false;
-    bool mult= false;
-    bool divd= false;
-    bool sqrt= false;
+    bool add_ = false;
+    bool subt = false;
+    bool mult = false;
+    bool divd = false;
+    bool sqrt = false;
 
     // Define command-line options using Lyra
     auto cli = lyra::cli()
@@ -51,6 +57,6 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    std::cout << "Result: " << resultValue << std::endl;
+    std::cout << "[Result]: " << resultValue << std::endl;
     return 0;
 }
